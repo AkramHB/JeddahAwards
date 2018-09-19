@@ -68,6 +68,19 @@
             transform: translate(-50%, -50%);
             z-index: 100;
         }
+
+        h1 span {
+            color: #28543e;
+            font-size: 2rem;
+        }
+
+        @media only screen and (max-width: 480px) {
+    h1 span {
+        font-size: 1rem;
+    }
+}
+
+        
   </style>
     
 
@@ -87,7 +100,7 @@
 </head>
 <body>
  <div id="loading">
-        <img id="loading-image" src="https://cdn.dribbble.com/users/171405/screenshots/4495501/800x600.gif" id="T1" alt="Loading..." />
+        <img id="loading-image" src="assets/images/Jeddah award.gif" id="T1" alt="Loading..." />
 
     </div>
 <section  class="menu2" id="menu2-0" data-rv-view="0">
@@ -131,7 +144,7 @@
 
 <div id="custom-html-5" custom-code="true" data-rv-view="2">
 
-<section data-rv-view="15" style="background-color: #e3debe;" id="intro" class="Images mbr-section mbr-section--no-padding">
+<!--<section data-rv-view="15" style="background-color: #e3debe;" id="intro" class="Images mbr-section mbr-section--no-padding">
       <div class="container">  
 <a  ><img id="T1" style="padding-bottom: 0em; " src="assets/images/gifimage.png" class="img-fluid"></a>
 <a ><img id="T2" style="padding-bottom: 0em; " src="assets/images/regismobile.png" class="img-fluid"></a>
@@ -144,6 +157,21 @@
 
              
              
+    </section>-->
+
+    <section style="background-color: #e3debe; padding: 50px;">
+        <div class = "container">
+            <h1>
+                <span
+                   class="txt-rotate"
+                   data-period="1000"
+                   data-rotate='[ "قريبًا",
+                     "جائزة جدة للإبداع ١٤٤٠ هـ .. تنطلق",
+                     "برعاية صاحب السمو الملكي الأمير مشعل بن ماجد محافظ جدة"
+                      ]'></span>
+              </h1>
+        </div>
+
     </section>
 
     <section style = "background-color: #e3debe; padding: 50px;">
@@ -880,5 +908,63 @@
     });
 </script>
 
+<script>
+        var TxtRotate = function(el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
+};
+
+TxtRotate.prototype.tick = function() {
+  var i = this.loopNum % this.toRotate.length;
+  var fullTxt = this.toRotate[i];
+
+  if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+  }
+
+  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+  var that = this;
+  var delta = 300 - Math.random() * 100;
+
+  if (this.isDeleting) { delta /= 2; }
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+  }
+
+  setTimeout(function() {
+    that.tick();
+  }, delta);
+};
+
+window.onload = function() {
+  var elements = document.getElementsByClassName('txt-rotate');
+  for (var i=0; i<elements.length; i++) {
+    var toRotate = elements[i].getAttribute('data-rotate');
+    var period = elements[i].getAttribute('data-period');
+    if (toRotate) {
+      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+    }
+  }
+  // INJECT CSS
+  var css = document.createElement("style");
+  css.type = "text/css";
+  css.innerHTML = ".txt-rotate > .wrap { border-left: 0.08em solid #666 }";
+  document.body.appendChild(css);
+};
+    </script>
 
 </html>
