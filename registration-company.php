@@ -265,7 +265,7 @@ if(mysqli_query($link, $sql)){
     $text .= 'رقم الهوية: ' .  $commRegister . "<br>";
     $text .= 'البريد الإلكتروني: ' .  $email . "<br><br>";
     $text .= 'في حال رغبتك بتعديل أو حذف المبادرة كليًا٬ بإمكانك الدخول على صفحة التعديل عن طريق الرابط التالي: ' . "<br>";
-    $text .= 'http://jeddahawards.org/edit+your+initiative.php' . "<br><br>";
+    $text .= 'http://jeddahawards.org/login.html' . "<br><br>";
     $text .= 'بيانات الدخول ' . "<br>";
     $text .= 'اسم المستخدم: ' .  $username . "<br>";
     $text .= 'كلمة السر: ' .  $password . "<br>";
@@ -400,5 +400,15 @@ mysqli_close($link);
 
 
 </body>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110676516-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
 
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-110676516-1');
+</script>
 </html>
