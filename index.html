@@ -32,7 +32,10 @@
   <script src="assets/theme/js/script.js"></script>   
   <script src="assets/theme/js/slick.min.js"></script> 
   <link rel="stylesheet" href="compiled/flipclock.css">
-  <script src="compiled/flipclock.js"></script>		
+  <script src="compiled/flipclock.js"></script>	
+  
+  
+  
 
   <style>
       .dot {
@@ -80,6 +83,148 @@
     }
 }
 
+.active {
+            display: none !important;
+        }
+        
+        .btn {
+            background: #426853;
+            color: white;
+            text-transform: uppercase;
+            width: 100%;
+            margin: 0 0;
+            border-radius: 4.5663%;
+        }
+        
+        .btn:hover {
+            background: #caae27 !important;
+            color: white !important;
+        }
+        
+        .btn-active {
+            background: #caae27 !important;
+            color: white !important;
+        }
+        
+        @media screen and (max-width: 768px) {}
+
+        #time {
+            width: 98%;
+        }
+        
+        #time option {
+            width: 98%;
+        }
+
+        .button {
+            user-select: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            background: #dcaa51;
+            display: block;
+            margin-top: 10px;
+            width: 15%;
+            color: white;
+            border-radius: 55px;
+            padding: 15px;
+            box-shadow: 0 2px 3px rgba(0, 0, 0, .5);
+            transition: .7s;
+            font-size: 60px;
+            margin: 0 auto;
+        }
+        
+        .button:hover {
+            background: #426752;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, .6);
+        }
+        
+        .button:active {
+            transform: scale(1.10);
+        }
+        
+        @media screen and (max-width: 1541px) {
+            .button {
+                width: 50%;
+            }
+        }
+        
+        @media screen and ( max-width: 630px) {
+            .button {
+                width: 80%;
+            }
+        }
+        
+        nav {
+            z-index: 1000;
+        }
+
+        .myUL {
+            margin: 0;
+            padding: 0;
+            background: #426853;
+            color: #fff;
+            text-align: center;
+            z-index: 1000;
+        }
+        
+        .myUL .li {
+            list-style: none;
+            display: inline-block;
+        }
+        
+        .myUL .li .a {
+            text-decoration: none;
+            color: #fff;
+            padding: 20px;
+            display: block;
+        }
+        
+        .toggle {
+            width: 100%;
+            padding: 10px 20px;
+            background: #426853;
+            box-sizing: border-box;
+            text-align: right;
+            color: #fff;
+            font-size: 30px;
+            display: none;
+        }
+        
+        .toggl {
+            color: #1d392a;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .toggle {
+                display: block;
+            }
+            .myUL {
+                width: 100%;
+                display: none;
+            }
+            .myUL .li {
+                display: block;
+                text-align: center;
+            }
+            .active1 {
+                display: block;
+            }
+        }
+        
+        .sticky {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .myRow {
+            background-color: #ececec;
+            background-color: rgba(233, 230, 230, 0.79);
+            padding: 2% 0;
+        }
+
         
   </style>
     
@@ -112,6 +257,21 @@
             <img id="T1" style="padding-bottom: 0em;" src="assets/images/header.png" style="align:center; height: 100%;width: 100%;" class="img-fluid">
             <img id="T2" style="padding-bottom: 0em;" src="assets/images/headermobile.jpeg" class="img-fluid">
             </div>
+
+            <nav class="menu" id="mainnav">
+                <div class="toggle">
+                    <i class="fa fa-bars bs" aria-hidden="true"></i>
+                    <span class="pull-left"> الرئيسية</span>
+                </div>
+                <ul class="myUL">
+                    <li class="li"><a class="a" href="#l1" onMouseOver="this.style.color='#caae27'" onMouseOut="this.style.color='#fefefe'">فكرة البرنامج</a></li>
+                    <li class="li"><a class="a" href="#l2" onMouseOver="this.style.color='#caae27'" onMouseOut="this.style.color='#fefefe'">أهداف البرنامج</a></li>
+                    <li class="li"><a class="a" href="#l3" onMouseOver="this.style.color='#caae27'" onMouseOut="this.style.color='#fefefe'">مراحل تحقيق الأهداف</a></li>
+                    <li class="li"><a class="a" href="#l4" onMouseOver="this.style.color='#caae27'" onMouseOut="this.style.color='#fefefe'">قطاعات التدريب</a></li>
+                    <li class="li"><a class="a" href="#l5" onMouseOver="this.style.color='#caae27'" onMouseOut="this.style.color='#fefefe'">الجهات الداعمة</a></li>
+        
+                </ul>
+            </nav>
 
             
 
@@ -965,6 +1125,28 @@ window.onload = function() {
   css.innerHTML = ".txt-rotate > .wrap { border-left: 0.08em solid #666 }";
   document.body.appendChild(css);
 };
+    </script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        var navpos = $('#mainnav').offset();
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > navpos.top) {
+                $('.menu').addClass("sticky");
+            } else {
+                $('.menu').removeClass("sticky");
+            }
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.bs').click(function() {
+            $('.myUL').toggleClass('active1');
+        })
+    })
+
     </script>
 
 </html>
