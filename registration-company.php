@@ -265,7 +265,7 @@ if(mysqli_query($link, $sql)){
     $text .= 'رقم الهوية: ' .  $commRegister . "<br>";
     $text .= 'البريد الإلكتروني: ' .  $email . "<br><br>";
     $text .= 'في حال رغبتك بتعديل أو حذف المبادرة كليًا٬ بإمكانك الدخول على صفحة التعديل عن طريق الرابط التالي: ' . "<br>";
-    $text .= 'http://jeddahawards.org/login.html' . "<br><br>";
+    $text .= 'http://jeddahawards.org/login.php' . "<br><br>";
     $text .= 'بيانات الدخول ' . "<br>";
     $text .= 'اسم المستخدم: ' .  $username . "<br>";
     $text .= 'كلمة السر: ' .  $password . "<br>";

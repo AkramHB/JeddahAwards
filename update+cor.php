@@ -35,7 +35,7 @@
             die("ERROR: Could not connect. " . mysqli_connect_error());
         }
 
-        $sql = "SELECT * FROM individuals WHERE username='$un'";
+        $sql = "SELECT * FROM organizations WHERE username='$un'";
         $result = $link->query($sql);
                   
         if ($result->num_rows > 0) {
@@ -43,77 +43,107 @@
                 echo '
 
                     <div class = "container mt-5">
-                        <form class="form" role="form" autocomplete="off" method="post" action="do+updating+ind.php" enctype="multipart/form-data">
+                        <form class="form" role="form" autocomplete="off" method="post" action="do+updating+cor.php" enctype="multipart/form-data">
                             <div class="container mt-5">
                                 <div class="card card-outline-secondary">
                                     <div class="card-header" style="color: #055d9b; background-color: #d7d49f;">
-                                        <h3 class="mb-0 text-center">المعلومات الشخصية</h3>
+                                        <h3 class="mb-0 text-center">بيانات المؤسسة</h3>
                                     </div>
                                     <div class="card-body">
-                                    <input type="text" hidden class="form-control" name="id" id="txtName" value = '. $row["id"] .'>
-                                    <input type="text" hidden class="form-control" name="username" id="txtName" value = '. $row["username"] .'>
                                         <div class="form-group row">
-                                            <label class="col-lg-3 col-form-label form-control-label text-center" for="name">الاسم</label>
-                                            <div class="col-lg-9">  
-                                                <input type="text" class="form-control" name="name" id="txtName" value = '. $row["name"] .'>
+                                            <label class="col-lg-3 col-form-label form-control-label text-center" for="orgName">اسم الجهة المشاركة</label>
+                                            <div class="col-lg-9"> 
+                                            <input type="text" hidden class="form-control" name="id" id="txtName" value = '. $row["id"] .'>
+                                            <input type="text" hidden class="form-control" name="username" id="txtName" value = '. $row["username"] .'> 
+                                                <input type="text" class="form-control" name="orgName" id="orgName" value = '. $row["orgName"] .'>
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-3 col-form-label form-control-label text-center" for="idnum">رقم الهوية</label>
+                                            <label class="col-lg-3 col-form-label form-control-label text-center" for="orgField">نوع المؤسسة</label>
                                             <div class="col-lg-9">
-                                                <input type="text" class="form-control" id="idnum" name="idnum" placeholder=" " maxlength="10" value = '. $row["idnum"] .'>
+                                                <input type="text" class="form-control" name="orgField"  id="orgField" value = '. $row["orgField"] .'>
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-3 col-form-label form-control-label text-center" for="job">الوظيفة</label>
+                                            <label class="col-lg-3 col-form-label form-control-label text-center" for="commRegister">رقم السجل التجاري</label>
                                             <div class="col-lg-9">
-                                                <input type="text" class="form-control" id="job" name="job" value = '. $row["job"] .'>
+                                                <input type="text" class="form-control" id="commRegister" name="commRegister" value = '. $row["commRegister"] .'>
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-3 col-form-label form-control-label text-center" for="email">البريد الإلكتروني </label>
+                                            <label class="col-lg-3 col-form-label form-control-label text-center" for="orgCity">المدينة</label>
+                                            <div class="col-lg-9">
+                                                <input type="text" class="form-control" name="orgCity" value = '. $row["orgCity"] .'>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label form-control-label text-center" for="address">العنوان</label>
+                                            <div class="col-lg-9">
+                                                <input type="text" class="form-control" name="address" value = '. $row["address"] .'>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label form-control-label text-center" for="orgActivities">النشاط الذي تزاوله المؤسسة</label>
+                                            <div class="col-lg-9">
+                                                <input type="text" class="form-control" name="orgActivities" value = '. $row["orgActivities"] .'>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label form-control-label text-center" for="website">الموقع الإلكتروني</label>
+                                            <div class="col-lg-9">
+                                                <input type="text" class="form-control" name="website" value = '. $row["website"] .'>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label form-control-label text-center" for="email">البريد الإلكتروني</label>
                                             <div class="col-lg-9">
                                                 <input type="email" class="form-control" name="email" value = '. $row["email"] .'>
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-3 col-form-label form-control-label text-center" for="mobile">رقم الجوال</label>
-                                            <div class="col-lg-9">
-                                                <input type="tel" class="form-control" placeholder=" رقم الجوال  - مثال 966540869636" name="mobile" pattern="[0-9]{3}[0-9]{2}[0-9]{3}[0-9]{4}" value = '. $row["mobile"] .'>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-lg-3 col-form-label form-control-label text-center" for="phone">رقم الهاتف</label>
+                                            <label class="col-lg-3 col-form-label form-control-label text-center" for="phone">رقم التواصل</label>
                                             <div class="col-lg-9">
                                                 <input type="tel" class="form-control" name="phone" value = '. $row["phone"] .'>
                                             </div>
                                         </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label form-control-label text-center" for="ceo">اسم المدير التنفيذي</label>
+                                            <div class="col-lg-9">
+                                                <input type="text" class="form-control" name="ceo" value = '. $row["ceo"] .'>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="card-header" style="color: #055d9b; background-color: #d7d49f;">
-                                        <h3 class="mb-0 text-center">معلومات وظيفية</h3>
+                                        <h3 class="mb-0 text-center">مندوب الاتصال من المؤسسة/h3>
                                     </div>
                                     <div class="card-body">
                                         <div class="form-group row">
-                                            <label class="col-lg-3 col-form-label form-control-label text-center" for="company">جهة العمل</label>
+                                            <label class="col-lg-3 col-form-label form-control-label text-center" for="orgRep">اسم ممثل المؤسسة</label>
                                             <div class="col-lg-9">
-                                                <input type="text" class="form-control" name="company" id="company" value = '. $row["company"] .'>
+                                                <input type="text" class="form-control" name="orgRep" id="orgRep" value = '. $row["orgRep"] .'>
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label class="col-lg-3 col-form-label form-control-label text-center" for="department">الإدارة/القسم</label>
-                                            <div class="col-lg-9">
-                                                <input type="text" class="form-control" name="department" id="department" value = '. $row["department"] .'>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-lg-3 col-form-label form-control-label text-center" for="position">مسمى الوظيفة</label>
+                                            <label class="col-lg-3 col-form-label form-control-label text-center" for="position">المسمى الوظيفي</label>
                                             <div class="col-lg-9">
                                                 <input type="text" class="form-control" name="position" id="position" value = '. $row["position"] .'>
                                             </div>
                                         </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label form-control-label text-center" for="repEmail">البريد الإلكتروني</label>
+                                            <div class="col-lg-9">
+                                                <input type="email" class="form-control" name="repEmail" id="repEmail" value = '. $row["repEmail"] .'>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-lg-3 col-form-label form-control-label text-center" for="repMobile">رقم الجوال</label>
+                                            <div class="col-lg-9">
+                                                <input type="tel" placeholder=" رقم الجوال  - مثال 966540869636" pattern="[0-9]{3}[0-9]{2}[0-9]{3}[0-9]{4}" class="form-control" name="repMobile" id="repMobile" value = '. $row["repMobile"] .'>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="card-header" style="color: #055d9b; background-color: #d7d49f;">
-                                        <h3 class="mb-0 text-center">التعريف بالمبادرة</h3>
+                                        <h3 class="mb-0 text-center">معلومات أساسية</h3>
                                     </div>
                                     <div class="card-body">
                                         <div class="form-group row">
@@ -123,9 +153,45 @@
                                             </div>
                                         </div>
                                     <div class="form-group row">
-                                        <label class="col-lg-3 col-form-label form-control-label text-center" for="city">المدينة التي انطلقت منها المبادرة</label>
+                                        <label class="col-lg-3 col-form-label form-control-label text-center" for="initiativeDepartment">اسم القسم/الإدارة المقدمة للمبادرة</label>
                                         <div class="col-lg-9">
-                                            <input type="text" class="form-control" name="city" id="city" value = '. $row["city"] .'>
+                                            <input type="text" class="form-control" name="initiativeDepartment" id="initiativeDepartment" value = '. $row["initiativeDepartment"] .'>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label form-control-label text-center" for="impEmployee">اسم الموظف المعني بتقديم المبادرة</label>
+                                        <div class="col-lg-9">
+                                            <input type="text" class="form-control" name="impEmployee" id="impEmployee" value = '. $row["impEmployee"] .'>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label form-control-label text-center" for="impEmployeeMobile">جواله</label>
+                                        <div class="col-lg-9">
+                                            <input type="tel" placeholder=" رقم الجوال  - مثال 966540869636" pattern="[0-9]{3}[0-9]{2}[0-9]{3}[0-9]{4}" class="form-control" name="impEmployeeMobile" id="impEmployeeMobile" value = '. $row["impEmployeeMobile"] .'>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label form-control-label text-center" for="impEmployee2">اسم موظف آخر معني بتقديم المبادرة</label>
+                                        <div class="col-lg-9">
+                                            <input type="text" class="form-control" name="impEmployee2" id="impEmployee2" value = '. $row["impEmployee2"] .'>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label form-control-label text-center" for="impEmployeeMobile2">جواله</label>
+                                        <div class="col-lg-9">
+                                            <input type="tel" placeholder=" رقم الجوال  - مثال 966540869636" pattern="[0-9]{3}[0-9]{2}[0-9]{3}[0-9]{4}" class="form-control" name="impEmployeeMobile2" id="impEmployeeMobile2" value = '. $row["impEmployeeMobile2"] .'>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">';
+                                        if($row["ack"] != ''){
+                                            echo '<label class="col-lg-3 col-form-label form-control-label text-center" for="ack">ارفاق نموذج الاقرار (تم رفع ملف مسبقًا)</label>';
+                                        }
+                                        else {
+                                            echo '<label class="col-lg-3 col-form-label form-control-label text-center" for="ack">ارفاق نموذج الاقرار</label>';
+                                        }
+                                        echo '<div class="col-lg-9">
+                                            <label for="ack" class="btn btn-default  dar btn-block" style="background-color: #d8b92b;">اختر الملف</label>
+                                            <input type="file" id="ack" name="ack" class="form-control" style="visibility:hidden">
                                         </div>
                                     </div>
                                 </div>
@@ -210,55 +276,31 @@
                                     </div>
                                 </div>
                                 <div class="card-header" style="color: #055d9b; background-color: #d7d49f;">
-                                    <h3 class="mb-0 text-center">مصدر التمويل</h3>
+                                    <h3 class="mb-0 text-center">التمويل والدعم</h3>
                                 </div>
                                 <div class="card-body">
                                     <div class="form-group row">
-                                        <label class="col-lg-3 col-form-label form-control-label text-center" for="initiativeSponsor">جهة تمويل المبادرة</label>
+                                        <label class="col-lg-3 col-form-label form-control-label text-center" for="initiativeSpon">ذكر مصادر التمويل الاساسي للمبادرة عند انطلاقتها - الرجاء ذكر راس المال الاولي لانطلاق المبادرة ومصدر التمويل</label>
                                         <div class="col-lg-9">
-                                            <input type="text" class="form-control" name="initiativeSponsor" id="initiativeSponsor" value = '. $row["initiativeSponsor"] .'>
+                                            <input type="text" class="form-control" name="initiativeSpon" id="initiativeSpon" value = '. $row["initiativeSpon"] .'>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-lg-3 col-form-label form-control-label text-center" for="manager" value = '. $row["manager"] .'>اسم المدير المباشر</label>
+                                        <label class="col-lg-3 col-form-label form-control-label text-center" for="initiativeSpon2">ذكر مصادر التمويل الحالي للمبادرة</label>
                                         <div class="col-lg-9">
-                                            <input type="text" class="form-control" name="manager" id="manager" value = '. $row["manager"] .'>
+                                            <input type="text" class="form-control" name="initiativeSpon2" id="initiativeSpon2" value = '. $row["initiativeSpon2"] .'>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-lg-3 col-form-label form-control-label text-center" for="managerMobile">هاتفه</label>
+                                        <label class="col-lg-3 col-form-label form-control-label text-center" for="initiativeSpon3">ذكر اي دعم او تعاون مقدم من جهات حكومية و/ أو أهليه منذ انطلاقة مبادرة</label>
                                         <div class="col-lg-9">
-                                            <input type="tel" placeholder=" رقم الجوال  - مثال 966540869636" pattern="[0-9]{3}[0-9]{2}[0-9]{3}[0-9]{4}" class="form-control" name="managerMobile" id="managerMobile" value = '. $row["managerMobile"] .'>
+                                        <input type="text" class="form-control" name="initiativeSpon3" id="initiativeSpon3" value = '. $row["initiativeSpon3"] .'>
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label class="col-lg-3 col-form-label form-control-label text-center" for="companyManager">اسم مدير الجهة</label>
+                                        <label class="col-lg-3 col-form-label form-control-label text-center" for="initiativeSpon4">ابراز حجم العنصر والمستوى التطوعي المطلوب في تنفيذ المبادرة من خدمات او افراد او مؤسسات</label>
                                         <div class="col-lg-9">
-                                            <input type="text" class="form-control" name="companyManager" id="companyManager" value = '. $row["companyManager"] .'>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-form-label form-control-label text-center" for="managerPosition">مسماه الوظيفي</label>
-                                        <div class="col-lg-9">
-                                            <input type="text" class="form-control" name="managerPosition" id="managerPosition" value = '. $row["managerPosition"] .'>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-form-label form-control-label text-center" for="officePhone">ارقام هواتف مكتبه</label>
-                                        <div class="col-lg-9">
-                                            <input type="tel" class="form-control" name="officePhone" id="officePhone" value = '. $row["officePhone"] .'>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">';
-                                        if($row["ack"] != ''){
-                                            echo '<label class="col-lg-3 col-form-label form-control-label text-center" for="ack">ارفاق نموذج الاقرار (تم رفع ملف مسبقًا)</label>';
-                                        }
-                                        else {
-                                            echo '<label class="col-lg-3 col-form-label form-control-label text-center" for="ack">ارفاق نموذج الاقرار</label>';
-                                        }
-                                        echo '<div class="col-lg-9">
-                                            <label for="ack" class="btn btn-default  dar btn-block" style="background-color: #d8b92b;">اختر الملف</label>
-                                            <input type="file" id="ack" name="ack" class="form-control" style="visibility:hidden">
+                                            <input type="text" class="form-control" name="initiativeSpon4" id="initiativeSpon4" value = '. $row["initiativeSpon4"] .'>
                                         </div>
                                     </div>
                                 </div>
@@ -266,7 +308,7 @@
                                     <h3 class="mb-0 text-center">مستندات مطلوبة</h3>
                                 </div>
                                 <div class="card-body">
-                                    <form class="form" role="form" autocomplete="off" method="post" action="do+updating+ind.php" enctype="multipart/form-data">
+                                    <form class="form" role="form" autocomplete="off" method="post" action="do+updating+cor.php" enctype="multipart/form-data">
                                     <input type="text" hidden class="form-control" name="id" id="txtName" value = '. $row["id"] .'>
                                     <input type="text" hidden class="form-control" name="username" id="txtName" value = '. $row["username"] .'>
                                         <h5 class="text-center mb-5">ثلاثة شهادات او افادات - على الأقل - من جهات مختلفة تبرز الجودة في تنفيذ المبادرة والفائدة الاجتماعية والاقتصادية على الشريحة المستهدفة</h5>
@@ -335,7 +377,7 @@
                                     <h3 class="mb-0 text-center">مستندات اختيارية</h3>
                                 </div>
                                 <div class="card-body">
-                                    <form class="form" role="form" autocomplete="off" method="post" action="do+updating+ind.php" enctype="multipart/form-data">
+                                    <form class="form" role="form" autocomplete="off" method="post" action="do+updating+cor.php" enctype="multipart/form-data">
                                     <input type="text" hidden class="form-control" name="id" id="txtName" value = '. $row["id"] .'>
                                     <input type="text" hidden class="form-control" name="username" id="txtName" value = '. $row["username"] .'>
                                         <div class="form-group row">';
@@ -397,7 +439,32 @@
                                             <div class="col-lg-9">
                                                 <input type="text" class="form-control" name="video2" id="video2" value = '. $row["video2"] .'>
                                             </div>
-                                        </div><br>
+                                        </div>
+                                        <div class="form-group row">';
+                                        if($row["cer10"] != ''){
+                                            echo '<label class="col-lg-3 col-form-label form-control-label text-center" for="cer10">حساب الايرادات والمصاريف المتعلقة بالمبادرة للسنتين الماضيتين (تم رفع ملف مسبقًا)</label>';
+                                        }
+                                        else {
+                                            echo '<label class="col-lg-3 col-form-label form-control-label text-center" for="cer10">حساب الايرادات والمصاريف المتعلقة بالمبادرة للسنتين الماضيتين</label>';
+                                        } 
+                                           echo '<div class="col-lg-9">
+                                                <label for="cer10" class="btn btn-default  dar btn-block" style="background-color: #d8b92b;">اختر الملف</label>
+                                                <input type="file" id="cer10" name="cer10" class="form-control" style="visibility:hidden">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">';
+                                        if($row["cer11"] != ''){
+                                            echo '<label class="col-lg-3 col-form-label form-control-label text-center" for="cer11">حساب الايرادات والمصاريف المتعلقة بالمبادرة للسنتين الماضيتين (تم رفع ملف مسبقًا)</label>';
+                                        }
+                                        else {
+                                            echo '<label class="col-lg-3 col-form-label form-control-label text-center" for="cer11">حساب الايرادات والمصاريف المتعلقة بالمبادرة للسنتين الماضيتين</label>';
+                                        } 
+                                           echo '<div class="col-lg-9">
+                                                <label for="cer11" class="btn btn-default  dar btn-block" style="background-color: #d8b92b;">اختر الملف</label>
+                                                <input type="file" id="cer11" name="cer11" class="form-control" style="visibility:hidden">
+                                            </div>
+                                        </div>
+                                        <br>
                                         <hr>
                                         <div class="form-group row">
                                             <div class="col-lg-12 text-center">

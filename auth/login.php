@@ -1,3 +1,19 @@
+<?php
+    session_start();
+    if (!empty($_POST["form-username"]) && !empty($_POST["form-password"])) {
+
+        $un = $_POST['form-username'];
+        $p = $_POST['form-password'];
+        
+        if($un == "admin" && $p == "0550496601"){
+            $_SESSION["admin"] = "admin";
+            echo "<script> location.href='displayind.php'; </script>";
+            exit;
+        }
+
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,7 +63,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-2 text">
-                        <img src="assets1/img/backgrounds/11.png" class="img-fluid">
+                        <img src="../assets1/img/backgrounds/11.png" class="img-fluid">
 
                         <div class="description">
                             <h3 style="color: #fff;">
@@ -63,11 +79,11 @@
                                 <p> فضلا قم بإدخال بياناتك</p>
                             </div>
                             <div class="form-top-right">
-                                <img src="assets1/img/backgrounds/sign-in.png">
+                                <img src="../assets1/img/backgrounds/sign-in.png">
                             </div>
                         </div>
                         <div class="form-bottom">
-                            <form role="form" action="http://jeddahawards.org/edit+your+initiative.php" method="post" class="login-form">
+                            <form role="form" action="login.php" method="post" class="login-form">
                                 <div class="form-group">
                                     <label class="sr-only" for="form-username">Username</label>
                                     <input type="text" name="form-username" placeholder="اسم المستخدم " class="form-username form-control" id="form-username">

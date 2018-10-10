@@ -14,7 +14,7 @@
         die("ERROR: Could not connect. " . mysqli_connect_error());
     }
 
-    $sql = "DELETE FROM individuals WHERE username= '$un';";
+    $sql = "DELETE FROM organizations WHERE username= '$un';";
     $result = $link->query($sql);
                   
     if ($result == true) {

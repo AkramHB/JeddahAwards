@@ -12,6 +12,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     
 </head>
 <body dir = "rtl">
@@ -28,9 +29,9 @@
 
     <?php
 
-    session_start();
+        session_start();
 
-    if(!empty($_SESSION["user"])){
+        if(!empty($_SESSION["user"])){
 
         $un = $_GET["username"];
         $servername = "localhost";
@@ -47,14 +48,13 @@
             die("ERROR: Could not connect. " . mysqli_connect_error());
         }
 
-        $sql = "SELECT * FROM individuals WHERE username='$un'";
+        $sql = "SELECT * FROM organizations WHERE username='$un'";
         $result = $link->query($sql);
                   
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
                 echo 
                 "<div class = 'container mt-5'>
-
 
                     <div class = 'row' style = 'color: #A19B41;'>
                         <div class = 'col-6 text-right'>
@@ -64,13 +64,11 @@
                         </div>
                         <div class = 'col-6 text-left'>
                             <h3>
-                                <a href = 'update+ind.php?data=$un'><i class='material-icons'>edit</i></a>
+                                <a href = 'update+cor.php?data=$un'><i class='material-icons'>edit</i></a>
                                 <!-- <a href='#' data-toggle='modal' data-target='#modalDelete'><i class='material-icons'>remove_circle</i></a> -->
                             </h3>
                         </div>
                     </div>
-
-
 
 
                     <div class = 'modal fade' id='modalDelete'>
@@ -88,7 +86,7 @@
                                 </div>
                                 
                                 <div class='modal-footer'>
-                                    <a class='btn btn-primary' href = 'delete+ind.php?data=$un'>نعم</a>
+                                    <a class='btn btn-primary' href = 'delete+cor.php?data=$un'>نعم</a>
                                     <button type='button' class='btn btn-secondary' data-dismiss = 'modal'>لا</button>
                                 </div>
                                 
@@ -105,38 +103,59 @@
 
 
                         <div class = 'col-3 text-left border-left border-bottom'>
-                            <h5>الاسم</h5>
+                            <h5>اسم الجهة المشاركة</h5>
                         </div>
                         <div class = 'col-9 text-right border-bottom'>
-                            <h5>". $row['name'] ."</h5>
+                            <h5>". $row['orgName'] ."</h5>
                         </div>
 
                         <div class = 'col-3 text-left border-left border-bottom'>
-                            <h5>رقم الهوية</h5>
+                            <h5>نوع المؤسسة</h5>
                         </div>
                         <div class = 'col-9 text-right border-bottom'>
-                            <h5>". $row['idnum'] ."</h5>
+                            <h5>". $row['orgField'] ."</h5>
                         </div>
 
                         <div class = 'col-3 text-left border-left border-bottom'>
-                            <h5>الوظيفة</h5>
+                            <h5>تاريخ انشائها</h5>
                         </div>
                         <div class = 'col-9 text-right border-bottom'>
-                            <h5>". $row['job'] ."</h5>
+                            <h5>". $row['establishdate'] ."</h5>
                         </div>
 
                         <div class = 'col-3 text-left border-left border-bottom'>
-                            <h5>الجنس</h5>
+                            <h5>رقم السجل التجاري</h5>
                         </div>
                         <div class = 'col-9 text-right border-bottom'>
-                            <h5>". $row['jender'] ."</h5>
+                            <h5>". $row['commRegister'] ."</h5>
                         </div>
 
                         <div class = 'col-3 text-left border-left border-bottom'>
-                            <h5>تاريخ الميلاد</h5>
+                            <h5>المدينة</h5>
                         </div>
                         <div class = 'col-9 text-right border-bottom'>
-                            <h5>". $row['birthdate'] ."</h5>
+                            <h5>". $row['orgCity'] ."</h5>
+                        </div>
+
+                        <div class = 'col-3 text-left border-left border-bottom'>
+                            <h5>العنوان</h5>
+                        </div>
+                        <div class = 'col-9 text-right border-bottom'>
+                            <h5>". $row['address'] ."</h5>
+                        </div>
+
+                        <div class = 'col-3 text-left border-left border-bottom'>
+                            <h5>النشاط الذي تزاوله المؤسسة</h5>
+                        </div>
+                        <div class = 'col-9 text-right border-bottom'>
+                            <h5>". $row['orgActivities'] ."</h5>
+                        </div>
+
+                        <div class = 'col-3 text-left border-left border-bottom'>
+                            <h5>الموقع الإلكتروني</h5>
+                        </div>
+                        <div class = 'col-9 text-right border-bottom'>
+                            <h5>". $row['website'] ."</h5>
                         </div>
 
                         <div class = 'col-3 text-left border-left border-bottom'>
@@ -147,31 +166,24 @@
                         </div>
 
                         <div class = 'col-3 text-left border-left border-bottom'>
-                            <h5>رقم الجوال</h5>
-                        </div>
-                        <div class = 'col-9 text-right border-bottom'>
-                            <h5>". $row['mobile'] ."</h5>
-                        </div>
-
-                        <div class = 'col-3 text-left border-left border-bottom'>
-                            <h5>رقم الهاتف</h5>
+                            <h5>رقم التواصل</h5>
                         </div>
                         <div class = 'col-9 text-right border-bottom'>
                             <h5>". $row['phone'] ."</h5>
                         </div>
 
                         <div class = 'col-3 text-left border-left border-bottom'>
-                            <h5>الشركة</h5>
+                            <h5>اسم المدير التنفيذي</h5>
                         </div>
                         <div class = 'col-9 text-right border-bottom'>
-                            <h5>". $row['company'] ."</h5>
+                            <h5>". $row['ceo'] ."</h5>
                         </div>
 
                         <div class = 'col-3 text-left border-left border-bottom'>
-                            <h5>القسم</h5>
+                            <h5>اسم ممثل المؤسسة</h5>
                         </div>
                         <div class = 'col-9 text-right border-bottom'>
-                            <h5>". $row['department'] ."</h5>
+                            <h5>". $row['orgRep'] ."</h5>
                         </div>
 
                         <div class = 'col-3 text-left border-left border-bottom'>
@@ -182,6 +194,20 @@
                         </div>
 
                         <div class = 'col-3 text-left border-left border-bottom'>
+                            <h5>البريد الإلكتروني</h5>
+                        </div>
+                        <div class = 'col-9 text-right border-bottom'>
+                            <h5>". $row['repEmail'] ."</h5>
+                        </div>
+
+                        <div class = 'col-3 text-left border-left border-bottom'>
+                            <h5>رقم الجوال</h5>
+                        </div>
+                        <div class = 'col-9 text-right border-bottom'>
+                            <h5>". $row['repMobile'] ."</h5>
+                        </div>
+
+                        <div class = 'col-3 text-left border-left border-bottom'>
                             <h5>اسم المبادرة</h5>
                         </div>
                         <div class = 'col-9 text-right border-bottom'>
@@ -189,24 +215,59 @@
                         </div>
 
                         <div class = 'col-3 text-left border-left border-bottom'>
-                            <h5>موعد انطلاق المبادرة</h5>
+                            <h5>مجال المبادرة</h5>
+                        </div>
+                        <div class = 'col-9 text-right border-bottom'>
+                            <h5>". $row['initiativeCategory'] ."</h5>
+                        </div>
+
+                        <div class = 'col-3 text-left border-left border-bottom'>
+                            <h5>تاريخ بدء تنفيذها</h5>
                         </div>
                         <div class = 'col-9 text-right border-bottom'>
                             <h5>". $row['initiativeStart'] ."</h5>
                         </div>
 
                         <div class = 'col-3 text-left border-left border-bottom'>
-                            <h5>موعد انتهاء المبادرة</h5>
+                            <h5>تاريخ توقفها</h5>
                         </div>
                         <div class = 'col-9 text-right border-bottom'>
                             <h5>". $row['initiativeFinish'] ."</h5>
                         </div>
 
                         <div class = 'col-3 text-left border-left border-bottom'>
-                            <h5>المدينة التي انطلقت منها المبادرة</h5>
+                            <h5>اسم القسم/الإدارة المقدمة للمبادرة</h5>
                         </div>
                         <div class = 'col-9 text-right border-bottom'>
-                            <h5>". $row['city'] ."</h5>
+                            <h5>". $row['initiativeDepartment'] ."</h5>
+                        </div>
+
+                        <div class = 'col-3 text-left border-left border-bottom'>
+                            <h5>اسم الموظف المعني بتقديم المبادرة</h5>
+                        </div>
+                        <div class = 'col-9 text-right border-bottom'>
+                            <h5>". $row['impEmployee'] ."</h5>
+                        </div>
+
+                        <div class = 'col-3 text-left border-left border-bottom'>
+                            <h5>جواله</h5>
+                        </div>
+                        <div class = 'col-9 text-right border-bottom'>
+                            <h5>". $row['impEmployeeMobile'] ."</h5>
+                        </div>
+
+                        <div class = 'col-3 text-left border-left border-bottom'>
+                            <h5>اسم موظف آخر معني بتقديم المبادرة</h5>
+                        </div>
+                        <div class = 'col-9 text-right border-bottom'>
+                            <h5>". $row['impEmployee2'] ."</h5>
+                        </div>
+
+                        <div class = 'col-3 text-left border-left border-bottom'>
+                            <h5>جواله</h5>
+                        </div>
+                        <div class = 'col-9 text-right border-bottom'>
+                            <h5>". $row['impEmployeeMobile2'] ."</h5>
                         </div>
 
                         <div class = 'col-3 text-left border-left border-bottom'>
@@ -280,45 +341,31 @@
                         </div>
 
                         <div class = 'col-3 text-left border-left border-bottom'>
-                            <h5>جهة تمويل المبادرة</h5>
+                            <h5>ذكر مصادر التمويل الاساسي للمبادرة عند انطلاقتها - الرجاء ذكر راس المال الاولي لانطلاق المبادرة ومصدر التمويل</h5>
                         </div>
                         <div class = 'col-9 text-right border-bottom'>
-                            <h5>". $row['initiativeSponsor'] ."</h5>
+                            <h5>". $row['initiativeSpon'] ."</h5>
                         </div>
 
                         <div class = 'col-3 text-left border-left border-bottom'>
-                            <h5>اسم المدير المباشر</h5>
+                            <h5>ذكر مصادر التمويل الحالي للمبادرة</h5>
                         </div>
                         <div class = 'col-9 text-right border-bottom'>
-                            <h5>". $row['manager'] ."</h5>
+                            <h5>". $row['initiativeSpon2'] ."</h5>
                         </div>
 
                         <div class = 'col-3 text-left border-left border-bottom'>
-                            <h5>هاتفه</h5>
+                            <h5>ذكر اي دعم او تعاون مقدم من جهات حكومية و/ أو أهليه منذ انطلاقة مبادرة</h5>
                         </div>
                         <div class = 'col-9 text-right border-bottom'>
-                            <h5>". $row['managerMobile'] ."</h5>
+                            <h5>". $row['initiativeSpon3'] ."</h5>
                         </div>
 
                         <div class = 'col-3 text-left border-left border-bottom'>
-                            <h5>اسم مدير الجهة</h5>
+                            <h5>ابراز حجم العنصر والمستوى التطوعي المطلوب في تنفيذ المبادرة من خدمات او افراد او مؤسسات</h5>
                         </div>
                         <div class = 'col-9 text-right border-bottom'>
-                            <h5>". $row['companyManager'] ."</h5>
-                        </div>
-
-                        <div class = 'col-3 text-left border-left border-bottom'>
-                            <h5>مسماه الوظيفي</h5>
-                        </div>
-                        <div class = 'col-9 text-right border-bottom'>
-                            <h5>". $row['managerPosition'] ."</h5>
-                        </div>
-
-                        <div class = 'col-3 text-left border-left border-bottom'>
-                            <h5>ارقام هواتف مكتبه</h5>
-                        </div>
-                        <div class = 'col-9 text-right border-bottom'>
-                            <h5>". $row['officePhone'] ."</h5>
+                            <h5>". $row['initiativeSpon4'] ."</h5>
                         </div>
 
                         <div class = 'col-3 text-left border-left border-bottom'>
@@ -425,6 +472,24 @@
                             <h5><a class = 'btn btn-default' href = '". $row['video2'] ."'>". $row['video2'] ."</a></h5>
                         </div>
 
+                        <div class = 'col-3 text-left border-left border-bottom'>
+                            <h5>حساب الايرادات والمصاريف المتعلقة بالمبادرة للسنتين الماضيتين</h5>
+                        </div>
+                        <div class = 'col-9 text-right border-bottom'>";
+                        if($row['cer10'] != ''){
+                            echo "<h5><a class = 'btn btn-default' href = '../uploads/" . $row['cer10'] . "'>تحميل </a></h5>";
+                        }
+                        echo "</div>
+
+                        <div class = 'col-3 text-left border-left border-bottom'>
+                            <h5>حساب الايرادات والمصاريف المقدرة والمتعلقة بالمبادرة للسنة القادمة.</h5>
+                        </div>
+                        <div class = 'col-9 text-right border-bottom'>";
+                        if($row['cer11'] != ''){
+                            echo "<h5><a class = 'btn btn-default' href = '../uploads/" . $row['cer11'] . "'>تحميل </a></h5>";
+                        }
+                        echo "
+
                         
 
                     </div>
@@ -436,13 +501,11 @@
 
         }
 
-
         else {
             echo "<div class = 'container text-center mt-5'><div class='alert alert-danger' role='alert'>
                 غير مصرح لك بالدخول هنا
           </div></div>";
         }
-        
 
     ?>
 
