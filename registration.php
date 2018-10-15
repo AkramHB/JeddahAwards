@@ -193,9 +193,9 @@ $sql = "INSERT INTO individuals (username, password, name, idnum, job, jender, b
 if(mysqli_query($link, $sql)){
     
     $to = $email;
-    $subject = 'شكرًا لتسجيلكم في برنامج جدة للابداع';
+    $subject = 'جائزة جدة للإبداع';
     $text = 'عزيزي ' .  $name . "<br>";
-    $text .= 'لقد تم ترشيحكم في جائزة جدة للابداع لعام ١٤٤٠ ' . "<br>";
+    $text .= 'شكرا لتسجيلكم بجائزة جدة للابداع لعام ١٤٤٠ ' . "<br>";
     $text .= 'بيانات ترشيحكم كالآتي: ' . "<br>";
     $text .= 'اسم المترشح: ' .  $name . "<br>";
     $text .= 'رقم الهوية: ' .  $idnum . "<br>";
