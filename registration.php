@@ -40,12 +40,10 @@
               <a href="http://www.jeddahawards.org"><img class="img-fluid d--block d-md-none mb-5" style="padding-bottom: 0em;" src="assets/images/headermobile1.png"></a>
 
 <?php
-
 $servername = "localhost";
 $username = "Ujeddah";
 $password = "Ujeddah2018";
 $dbname = "jeddahawards";
-
 $link = mysqli_connect($servername, $username, $password, $dbname);
  mysqli_set_charset($link,"utf8");
  
@@ -61,7 +59,6 @@ shuffle($seed);
 $username = '';
 foreach (array_rand($seed, 8) as $k) $username .= $seed[$k];
  
-
 $seed = str_split('abcdefghijklmnopqrstuvwxyz'
     .'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     .'0123456789!@#$%^&*()'); 
@@ -114,98 +111,71 @@ $cer7 = "";
 $cer8 = "";
 $cer9 = "";
 
-if(file_exists($_FILES['ack']['name']) || is_uploaded_file($_FILES['ack']['name'])) {
-    $temp = explode(".", $_FILES["ack"]["name"]);
-    $newfilename = $idnum . pathinfo($_FILES['ack']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-    $dst = "./uploads/";
-    move_uploaded_file($_FILES["ack"]["tmp_name"], $dst . $newfilename);
-    $ack = $newfilename; 
-}
+$temp = explode(".", $_FILES["ack"]["name"]);
+$newfilename = $idnum . pathinfo($_FILES['ack']['name'], PATHINFO_FILENAME) . '.' . end($temp);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["ack"]["tmp_name"], $dst . $newfilename);
+$ack = $newfilename;
 
-if(file_exists($_FILES['cer']['name']) || is_uploaded_file($_FILES['cer']['name'])) {
-    $temp = explode(".", $_FILES["cer"]["name"]);
-    $newfilename = $idnum . pathinfo($_FILES['cer']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-    $dst = "./uploads/";
-    move_uploaded_file($_FILES["cer"]["tmp_name"], $dst . $newfilename);
-    $cer = $newfilename; 
-}
-
-if(file_exists($_FILES['cer2']['name']) || is_uploaded_file($_FILES['cer2']['name'])) {
-    $temp = explode(".", $_FILES["cer2"]["name"]);
-    $newfilename = $idnum . pathinfo($_FILES['cer2']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-    $dst = "./uploads/";
-    move_uploaded_file($_FILES["cer2"]["tmp_name"], $dst . $newfilename);
-    $cer2 = $newfilename; 
-}
-
-if(file_exists($_FILES['cer3']['name']) || is_uploaded_file($_FILES['cer3']['name'])) {
-    $temp = explode(".", $_FILES["cer3"]["name"]);
-    $newfilename = $idnum . pathinfo($_FILES['cer3']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-    $dst = "./uploads/";
-    move_uploaded_file($_FILES["cer3"]["tmp_name"], $dst . $newfilename);
-    $cer3 = $newfilename; 
-}
-
-if(file_exists($_FILES['cer4']['name']) || is_uploaded_file($_FILES['cer4']['name'])) {
-    $temp = explode(".", $_FILES["cer4"]["name"]);
-    $newfilename = $idnum . pathinfo($_FILES['cer4']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-    $dst = "./uploads/";
-    move_uploaded_file($_FILES["cer4"]["tmp_name"], $dst . $newfilename);
-    $cer4 = $newfilename; 
-}
-
-if(file_exists($_FILES['cer5']['name']) || is_uploaded_file($_FILES['cer5']['name'])) {
-    $temp = explode(".", $_FILES["cer5"]["name"]);
-    $newfilename = $idnum . pathinfo($_FILES['cer5']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-    $dst = "./uploads/";
-    move_uploaded_file($_FILES["cer5"]["tmp_name"], $dst . $newfilename);
-    $cer5 = $newfilename; 
-}
-
-if(file_exists($_FILES['cer6']['name']) || is_uploaded_file($_FILES['cer6']['name'])) {
-    $temp = explode(".", $_FILES["cer6"]["name"]);
-    $newfilename = $idnum . pathinfo($_FILES['cer6']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-    $dst = "./uploads/";
-    move_uploaded_file($_FILES["cer6"]["tmp_name"], $dst . $newfilename);
-    $cer6 = $newfilename; 
-}
-
-if(file_exists($_FILES['cer7']['name']) || is_uploaded_file($_FILES['cer7']['name'])) {
-    $temp = explode(".", $_FILES["cer7"]["name"]);
-    $newfilename = $idnum . pathinfo($_FILES['cer7']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-    $dst = "./uploads/";
-    move_uploaded_file($_FILES["cer7"]["tmp_name"], $dst . $newfilename);
-    $cer7 = $newfilename; 
-}
-
-if(file_exists($_FILES['cer8']['name']) || is_uploaded_file($_FILES['cer8']['name'])) {
-    $temp = explode(".", $_FILES["cer8"]["name"]);
-    $newfilename = $idnum . pathinfo($_FILES['cer8']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-    $dst = "./uploads/";
-    move_uploaded_file($_FILES["cer8"]["tmp_name"], $dst . $newfilename);
-    $cer8 = $newfilename; 
-}
-
-if(file_exists($_FILES['cer9']['name']) || is_uploaded_file($_FILES['cer9']['name'])) {
-    $temp = explode(".", $_FILES["cer9"]["name"]);
-    $newfilename = $idnum . pathinfo($_FILES['cer9']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-    $dst = "./uploads/";
-    move_uploaded_file($_FILES["cer9"]["tmp_name"], $dst . $newfilename);
-    $cer9 = $newfilename; 
-}
+$temp2 = explode(".", $_FILES["cer"]["name"]);
+$newfilename = $idnum . pathinfo($_FILES['cer']['name'], PATHINFO_FILENAME) . '.' . end($temp2);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["cer"]["tmp_name"], $dst . $newfilename);
+$cer = $newfilename;
 
 
+$temp3 = explode(".", $_FILES["cer2"]["name"]);
+$newfilename = $idnum . pathinfo($_FILES['cer2']['name'], PATHINFO_FILENAME) . '.' . end($temp3);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["cer2"]["tmp_name"], $dst . $newfilename);
+$cer2 = $newfilename;
 
+$temp4 = explode(".", $_FILES["cer3"]["name"]);
+$newfilename = $idnum . pathinfo($_FILES['cer3']['name'], PATHINFO_FILENAME) . '.' . end($temp4);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["cer3"]["tmp_name"], $dst . $newfilename);
+$cer3 = $newfilename;
 
+$temp5 = explode(".", $_FILES["cer4"]["name"]);
+$newfilename = $idnum . pathinfo($_FILES['cer4']['name'], PATHINFO_FILENAME) . '.' . end($temp5);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["cer4"]["tmp_name"], $dst . $newfilename);
+$cer4 = $newfilename;
 
+$temp6 = explode(".", $_FILES["cer5"]["name"]);
+$newfilename = $idnum . pathinfo($_FILES['cer5']['name'], PATHINFO_FILENAME) . '.' . end($temp6);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["cer5"]["tmp_name"], $dst . $newfilename);
+$cer5 = $newfilename;
 
+$temp7 = explode(".", $_FILES["cer6"]["name"]);
+$newfilename = $idnum . pathinfo($_FILES['cer6']['name'], PATHINFO_FILENAME) . '.' . end($temp7);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["cer6"]["tmp_name"], $dst . $newfilename);
+$cer6 = $newfilename;
+
+$temp8 = explode(".", $_FILES["cer7"]["name"]);
+$newfilename = $idnum . pathinfo($_FILES['cer7']['name'], PATHINFO_FILENAME) . '.' . end($temp8);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["cer7"]["tmp_name"], $dst . $newfilename);
+$cer7 = $newfilename;
+
+$temp9 = explode(".", $_FILES["cer8"]["name"]);
+$newfilename = $idnum . pathinfo($_FILES['cer8']['name'], PATHINFO_FILENAME) . '.' . end($temp9);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["cer8"]["tmp_name"], $dst . $newfilename);
+$cer8 = $newfilename;
+
+$temp10 = explode(".", $_FILES["cer9"]["name"]);
+$newfilename = $idnum . pathinfo($_FILES['cer9']['name'], PATHINFO_FILENAME) . '.' . end($temp10);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["cer9"]["tmp_name"], $dst . $newfilename);
+$cer9 = $newfilename;
      
-
 if($name == "" || $idnum == "" || $jender == "" || $birthdate == "" || $email == "" || $mobile == "" || $initiativeName == "" || $initiativeStart == "" || $initiativeFinish == ""){
               echo "<div class = 'container' style = 'position:absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);'><h3 style = 'color: red;'>حدث خطأ ما، الرجاء التأكد من ادخال جميع البيانات بشكل صحيح</h3></div>";
               die();
               }
-
               $sql = "SELECT * FROM individuals WHERE idnum='$idnum'";
         $result = $link->query($sql);
                   
@@ -217,14 +187,9 @@ if($name == "" || $idnum == "" || $jender == "" || $birthdate == "" || $email ==
                   
          }
     
-
 else{
 $sql = "INSERT INTO individuals (username, password, name, idnum, job, jender, birthdate, email, mobile, phone, company, department, position, initiativeName, initiativeStart, initiativeFinish, city, initiativeDesc, initiativeDesc2, initiativeDesc3, initiativeNum, initiativeNum2, initiativeNum3, initiativeUnique, initiativeUnique2, initiativeUnique3, initiativeInOut, initiativeSponsor, manager, managerMobile, companyManager, managerPosition, officePhone, ack, cer, cer2, cer3, cer4, cer5, cer6, cer7, cer8, cer9, video, video2) VALUES ('$username', '$password', '$name', '$idnum', '$job', '$jender', '$birthdate', '$email', '$mobile','$phone', '$company', '$department', '$position', '$initiativeName', '$initiativeStart', '$initiativeFinish', '$city', '$initiativeDesc', '$initiativeDesc2', '$initiativeDesc3', '$initiativeNum', '$initiativeNum2', '$initiativeNum3', '$initiativeUnique', '$initiativeUnique2', '$initiativeUnique3', '$initiativeInOut', '$initiativeSponsor', '$manager', '$managerMobile', '$companyManager', '$managerPosition','$officePhone', '$ack', '$cer', '$cer2', '$cer3', '$cer4', '$cer5', '$cer6', '$cer7', '$cer8', '$cer9', '$video', '$video2')";
-
-
-
 // attempt insert query execution
-
 if(mysqli_query($link, $sql)){
     
     $to = $email;
@@ -240,39 +205,24 @@ if(mysqli_query($link, $sql)){
     $text .= 'بيانات الدخول ' . "<br>";
     $text .= 'اسم المستخدم: ' .  $username . "<br>";
     $text .= 'كلمة السر: ' .  $password . "<br>";
-
-
-
-
-
     $from = "info@jeddahawards.org";
     // Always set content-type when sending HTML email
     $headers = 'MIME-Version: 1.0' . "\r\n";
     $headers .= 'Content-type:text/html;charset=UTF-8' . "\r\n";
-
     // More headers
     $headers .= 'From: ' . $from . "\r\n";
     
     $header=$headers;
     
     mail($to, $subject, $text, $header);
-
     include("includeSettings.php");	
     		//يحتوي هذه الملف على جميع الإعدادات الخاصه ببوابات الإرسال
-
-
-
 $myMobile = "jedawards";							//رقم الجوال (إسم المستخدم) في موبايلي
 $myPassword = "jeda6601";							//كلمة المرور في موبايلي
-
 $numbers = $mobile;							//يجب كتابة الرقم بالصيغة الدولية مثل 96650555555 وعند الإرسال إلى أكثر من رقم يجب وضع الفاصلة (,) وهي التي عند حرف الواو بين كل رقمين 
-
-
 $sender = "JeddahAwards";					//اسم المرسل الذي سيظهر عند ارسال الرساله، ويتم تشفيره إلى  بشكل تلقائي إلى نوع التشفير (urlencode)
-
 										//لا يوجد عدد محدد من الأرقام التي يمكنك الإرسال لها في حال تم الإرسال من خلال بوابة fsockpoen  أو بوابة CURL،
 										//ولكن في حال تم الإرسال من خلال بوابة fOpen ، فإنه يمكنك الإرسال إلى 120 رقم فقط في كل عملية إرسال
-
             $msg = "شكرًا لتسجيلكم في برنامج جدة للابداع";
             $msg = 'عزيزي ' .  $name . "<br>";
             $msg .= 'لقد تم ترشيحكم في جائزة جدة للابداع لعام ١٤٤٠ ' . "<br>";
@@ -287,13 +237,11 @@ $sender = "JeddahAwards";					//اسم المرسل الذي سيظهر عند �
 										في حال ارسال اكثر من رساله عربيه فان الرساله الواحده تحسب 67
 										والرساله الانجليزي 153
 										*/
-
 $MsgID = rand(1,99999);					//رقم عشوائي يتم إرفاقه مع الإرساليه، في حال الرغبة بإرسال نفس الإرساليه في أقل من ساعه من إرسال الرساله الأولى.
 										//موقع موبايلي يمنع تكرار إرسال نفس الرساله خلال ساعه من إرسالها، إلا في حال تم إرسال قيمة مختلفه مع كل إرساليه.
 										
 $timeSend = 0;							//لتحديد وقت الإرساليه - 0 تعني الإرسال الآن
 										//الشكل القياسي للوقت هو hh:mm:ss
-
 $dateSend = 0;							//لتحديد تاريخ الإرساليه - 0 تعني الإرسال الآن
 										//الشكل القياسي للتاريخ هو mm:dd:yyyy
 										
@@ -303,16 +251,13 @@ $deleteKey = 152485;					//يمكنك من خلال هذه القيمة  الق�
 $resultType = 1;						//دالة تحديد نوع النتيجه الراجعه من البوابة
 										//0: إرجاع نتيجة البوابة بشكل عددي
 										//1: إرجاع نتيجة البوابة بشكل نصي											
-
 // دالة الإرسال
 sendSMS($myMobile, $myPassword, $numbers, $sender, $msg, $MsgID, $timeSend, $dateSend, $deleteKey, $resultType);
-
     
     
         /*echo "<div>
              <a href='http://jeddahtawteen.org'><img class='img-fluid' style='padding-bottom: 0em;' src='../assets/images/header.jpg'></a>
         </div>";
-
         $sentence = '';
         $link = '';
         $features='http://jeddahtawteen.org/features.html';
@@ -325,16 +270,13 @@ sendSMS($myMobile, $myPassword, $numbers, $sender, $msg, $MsgID, $timeSend, $dat
             $link = 'https://maps.google.com/?q=21.580778,39.168953';
         }else {
             $sentence = 'المقابلات الشخصية النسائية للبرنامج التدريبي سوف تكون من يوم الثلاثاء  ١٨ ذو القعدة ١٤٣٩ هـ الى يوم الاثنين ٢ ذو الحجة ١٤٣٩ هـ يوميا من الساعة 10 صباحا الى 2 ظهرا  بالمقر النسائي للبرنامج التدريبي لتوطين الوظائف بفرع جامعة جدة في الفيصلية ( بنين) 
-
             يمكنكم الحضور خلال هذه الفترة لإجراء المقابلة<br> 
             موقع المقابلات الشخصية ';
             $link = 'https://maps.google.com/?q=21.580778,39.168953';
         }
-
         echo "<div class = 'container text-center my-5'><div class='alert alert-success' role='alert'>
                 شكرًا لتسجيلكم معنا٬ من فضلك الرجاء الاطلاع على الجدول المخصص لكم <br> " . $sentence . "<br> <a href = '" . $link . "'>الموقع </a>   <br> وللإطلاع على مميزات الشركات الموظفة يمكنك زيارة الرابط التالي: <br> <a href='".$features."'> رابط المميزات </a> <br>
               </div></div>";
-
        /* echo "<div class = 'container text-center mt-5'>مواعيد الرسائل (رجال)
             <table class = 'table table-striped table-hover table-responsive text-center'>
             <thead class='thead-light'><tr><th scope='col'>م</th><th scope='col'>التاريخ</th><th scope='col'>نوع الرسالة</th><th scope='col'>الوسيلة</th><th scope='col'>المرسل إليهم</th></tr></thead>
@@ -350,7 +292,6 @@ sendSMS($myMobile, $myPassword, $numbers, $sender, $msg, $MsgID, $timeSend, $dat
             <tr><th scope='row'>10</th><td>5-11-1439</td><td>تذكيرية بموعد المقابلات</td><td>البريد الالكتروني</td><td>جميع المسجلين في المنصه</td></tr>
             </table>
         </div>";*/
-
         /* echo "<div class = 'container text-center mt-5'>مواعيد الرسائل (رجال)
             <table class = 'table table-striped table-hover table-responsive text-center'>
             <thead class='thead-light'><tr><th scope='col'>م</th><th scope='col'>التاريخ</th><th scope='col'>نوع الرسالة</th><th scope='col'>الوسيلة</th><th scope='col'>المرسل إليهم</th></tr></thead>
@@ -366,12 +307,10 @@ sendSMS($myMobile, $myPassword, $numbers, $sender, $msg, $MsgID, $timeSend, $dat
             <tr><th scope='row'>10</th><td>5-11-1439</td><td>تذكيرية بموعد المقابلات</td><td>البريد الالكتروني</td><td>جميع المسجلين في المنصه</td></tr>
             </table>
         </div>";*/
-
         echo "<div class = 'container text-center'><div class='alert alert-success text-center' role='alert'>
         لقد تم تسجيلكم بنجاح في جائزة جدة للابداع.
         </div>";
         echo "<div class = 'container text-center'><a class='btn btn-lg text-center' href='http://jeddahawards.org' role='button' style = 'color: #055d9b; background-color: #aea337;'>العودة إلي الصفحة الرئيسية</a></div></div>";
-
     
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);

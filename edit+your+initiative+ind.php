@@ -325,7 +325,7 @@
                             <h5>نموذج الإقرار</h5>
                         </div>
                         <div class = 'col-9 text-right border-bottom'>";
-                        if($row['ack'] != ''){
+                        if($row['ack'] != $row['idnum'] . "."){
                             echo "<h5><a class = 'btn btn-default' href = '../uploads/" . $row['ack'] . "'>تحميل </a></h5>";
                         }
                        echo"</div>
@@ -334,7 +334,7 @@
                             <h5>إفادة ١</h5>
                         </div>
                         <div class = 'col-9 text-right border-bottom'>";
-                        if($row['cer'] != ''){
+                        if($row['cer'] != $row['idnum'] . "."){
                             echo "<h5><a class = 'btn btn-default' href = '../uploads/" . $row['cer'] . "'>تحميل </a></h5>";
                         }
                         echo "</div>
@@ -343,7 +343,7 @@
                             <h5>إفادة ٢</h5>
                         </div>
                         <div class = 'col-9 text-right border-bottom'>";
-                        if($row['cer2'] != ''){
+                        if($row['cer2'] != $row['idnum'] . "."){
                            echo "<h5><a class = 'btn btn-default' href = '../uploads/" . $row['cer2'] . "'>تحميل </a></h5>";
                         }
                         echo "</div>
@@ -352,7 +352,7 @@
                             <h5>إفادة ٣</h5>
                         </div>
                         <div class = 'col-9 text-right border-bottom'>";
-                        if($row['cer3'] != ''){
+                        if($row['cer3'] != $row['idnum'] . "."){
                            echo "<h5><a class = 'btn btn-default' href = '../uploads/" . $row['cer3'] . "'>تحميل </a></h5>";
                         }
                         echo "</div>
@@ -361,7 +361,7 @@
                             <h5>إفادة ٤</h5>
                         </div>
                         <div class = 'col-9 text-right border-bottom'>";
-                        if($row['cer4'] != ''){
+                        if($row['cer4'] != $row['idnum'] . "."){
                             echo "<h5><a class = 'btn btn-default' href = '../uploads/" . $row['cer4'] . "'>تحميل </a></h5>";
                         }
                         echo "</div>
@@ -370,7 +370,7 @@
                             <h5>إفادة ٥</h5>
                         </div>
                         <div class = 'col-9 text-right border-bottom'>";
-                        if($row['cer5'] != ''){
+                        if($row['cer5'] != $row['idnum'] . "."){
                             echo "<h5><a class = 'btn btn-default' href = '../uploads/" . $row['cer5'] . "'>تحميل </a></h5>";
                         }
                         echo"</div>
@@ -379,7 +379,7 @@
                             <h5>نسخه عن شهادات تقدير حصلت عليها المبادرة من جهات مختلفة</h5>
                         </div>
                         <div class = 'col-9 text-right border-bottom'>";
-                        if($row['cer6'] != ''){
+                        if($row['cer6'] != $row['idnum'] . "."){
                             echo "<h5><a class = 'btn btn-default' href = '../uploads/" . $row['cer6'] . "'>تحميل </a></h5>";
                         }
                         echo "</div>
@@ -388,7 +388,7 @@
                             <h5>نسخه ٢ عن شهادات تقدير حصلت عليها المبادرة من جهات مختلفة</h5>
                         </div>
                         <div class = 'col-9 text-right border-bottom'>";
-                        if($row['cer7'] != ''){
+                        if($row['cer7'] != $row['idnum'] . "."){
                             echo "<h5><a class = 'btn btn-default' href = '../uploads/" . $row['cer7'] . "'>تحميل </a></h5>";
                         }
                        echo "</div>
@@ -397,7 +397,7 @@
                             <h5>صور او مطبوعات تبرز وتشيد بنشاطات وانجازات المبادرة</h5>
                         </div>
                         <div class = 'col-9 text-right border-bottom'>";
-                        if($row['cer8'] != ''){
+                        if($row['cer8'] != $row['idnum'] . "."){
                             echo "<h5><a class = 'btn btn-default' href = '../uploads/" . $row['cer8'] . "'>تحميل </a></h5>";
                         }
                         echo "</div>
@@ -406,7 +406,7 @@
                             <h5>صور او مطبوعات تبرز وتشيد بنشاطات وانجازات المبادرة</h5>
                         </div>
                         <div class = 'col-9 text-right border-bottom'>";
-                        if($row['cer9'] != ''){
+                        if($row['cer9'] != $row['idnum'] . "."){
                             echo "<h5><a class = 'btn btn-default' href = '../uploads/" . $row['cer9'] . "'>تحميل </a></h5>";
                         }
                         echo "</div>

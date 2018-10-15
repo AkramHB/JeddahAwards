@@ -127,105 +127,77 @@ $cer11 = "";
 
 
 
-if(file_exists($_FILES['ack']['name']) || is_uploaded_file($_FILES['ack']['name'])) {
-    $temp = explode(".", $_FILES["ack"]["name"]);
-    $newfilename = $commRegister . pathinfo($_FILES['ack']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-    $dst = "./uploads/";
-    move_uploaded_file($_FILES["ack"]["tmp_name"], $dst . $newfilename);
-    $ack = $newfilename; 
-}
+$temp = explode(".", $_FILES["cer50"]["name"]);
+$newfilename = $commRegister . pathinfo($_FILES['cer50']['name'], PATHINFO_FILENAME) . '.' . end($temp);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["cer50"]["tmp_name"], $dst . $newfilename);
+$ack= $newfilename;
 
-if(file_exists($_FILES['cer']['name']) || is_uploaded_file($_FILES['cer']['name'])) {
-    $temp = explode(".", $_FILES["cer"]["name"]);
-    $newfilename = $commRegister . pathinfo($_FILES['cer']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-    $dst = "./uploads/";
-    move_uploaded_file($_FILES["cer"]["tmp_name"], $dst . $newfilename);
-    $cer = $newfilename; 
-}
+$temp2 = explode(".", $_FILES["cer51"]["name"]);
+$newfilename = $commRegister . pathinfo($_FILES['cer51']['name'], PATHINFO_FILENAME) . '.' . end($temp2);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["cer51"]["tmp_name"], $dst . $newfilename);
+$cer= $newfilename;
 
-if(file_exists($_FILES['cer2']['name']) || is_uploaded_file($_FILES['cer2']['name'])) {
-    $temp = explode(".", $_FILES["cer2"]["name"]);
-    $newfilename = $commRegister . pathinfo($_FILES['cer2']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-    $dst = "./uploads/";
-    move_uploaded_file($_FILES["cer2"]["tmp_name"], $dst . $newfilename);
-    $cer2 = $newfilename; 
-}
+$cer2= explode(".", $_FILES["cer52"]["name"]);
+$newfilename = $commRegister . pathinfo($_FILES['cer52']['name'], PATHINFO_FILENAME) . '.' . end($temp3);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["cer52"]["tmp_name"], $dst . $newfilename);
+$cer2= $newfilename;
 
-if(file_exists($_FILES['cer3']['name']) || is_uploaded_file($_FILES['cer3']['name'])) {
-    $temp = explode(".", $_FILES["cer3"]["name"]);
-    $newfilename = $commRegister . pathinfo($_FILES['cer3']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-    $dst = "./uploads/";
-    move_uploaded_file($_FILES["cer3"]["tmp_name"], $dst . $newfilename);
-    $cer3 = $newfilename; 
-}
+$temp4 = explode(".", $_FILES["cer53"]["name"]);
+$newfilename = $commRegister . pathinfo($_FILES['cer53']['name'], PATHINFO_FILENAME) . '.' . end($temp4);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["cer53"]["tmp_name"], $dst . $newfilename);
+$cer3= $newfilename;
 
-if(file_exists($_FILES['cer4']['name']) || is_uploaded_file($_FILES['cer4']['name'])) {
-    $temp = explode(".", $_FILES["cer4"]["name"]);
-    $newfilename = $commRegister . pathinfo($_FILES['cer4']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-    $dst = "./uploads/";
-    move_uploaded_file($_FILES["cer4"]["tmp_name"], $dst . $newfilename);
-    $cer4 = $newfilename; 
-}
+$temp5 = explode(".", $_FILES["cer54"]["name"]);
+$newfilename = $commRegister . pathinfo($_FILES['cer54']['name'], PATHINFO_FILENAME) . '.' . end($temp5);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["cer54"]["tmp_name"], $dst . $newfilename);
+$cer4 = $newfilename;
 
-if(file_exists($_FILES['cer5']['name']) || is_uploaded_file($_FILES['cer5']['name'])) {
-    $temp = explode(".", $_FILES["cer5"]["name"]);
-    $newfilename = $commRegister . pathinfo($_FILES['cer5']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-    $dst = "./uploads/";
-    move_uploaded_file($_FILES["cer5"]["tmp_name"], $dst . $newfilename);
-    $cer5 = $newfilename; 
-}
+$temp6 = explode(".", $_FILES["cer55"]["name"]);
+$newfilename = $commRegister . pathinfo($_FILES['cer55']['name'], PATHINFO_FILENAME) . '.' . end($temp6);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["cer55"]["tmp_name"], $dst . $newfilename);
+$cer5 = $newfilename;
 
-if(file_exists($_FILES['cer6']['name']) || is_uploaded_file($_FILES['cer6']['name'])) {
-    $temp = explode(".", $_FILES["cer6"]["name"]);
-    $newfilename = $commRegister . pathinfo($_FILES['cer6']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-    $dst = "./uploads/";
-    move_uploaded_file($_FILES["cer6"]["tmp_name"], $dst . $newfilename);
-    $cer6 = $newfilename; 
-}
+$temp7 = explode(".", $_FILES["cer56"]["name"]);
+$newfilename = $commRegister . pathinfo($_FILES['cer56']['name'], PATHINFO_FILENAME) . '.' . end($temp7);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["cer56"]["tmp_name"], $dst . $newfilename);
+$cer6= $newfilename;
 
-if(file_exists($_FILES['cer7']['name']) || is_uploaded_file($_FILES['cer7']['name'])) {
-    $temp = explode(".", $_FILES["cer7"]["name"]);
-    $newfilename = $commRegister . pathinfo($_FILES['cer7']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-    $dst = "./uploads/";
-    move_uploaded_file($_FILES["cer7"]["tmp_name"], $dst . $newfilename);
-    $cer7 = $newfilename; 
-}
+$temp8 = explode(".", $_FILES["cer57"]["name"]);
+$newfilename = $commRegister . pathinfo($_FILES['cer57']['name'], PATHINFO_FILENAME) . '.' . end($temp8);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["cer57"]["tmp_name"], $dst . $newfilename);
+$cer7= $newfilename;
 
-if(file_exists($_FILES['cer8']['name']) || is_uploaded_file($_FILES['cer8']['name'])) {
-    $temp = explode(".", $_FILES["cer8"]["name"]);
-    $newfilename = $commRegister . pathinfo($_FILES['cer8']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-    $dst = "./uploads/";
-    move_uploaded_file($_FILES["cer8"]["tmp_name"], $dst . $newfilename);
-    $cer8 = $newfilename; 
-}
+$temp9 = explode(".", $_FILES["cer58"]["name"]);
+$newfilename = $commRegister . pathinfo($_FILES['cer58']['name'], PATHINFO_FILENAME) . '.' . end($temp9);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["cer58"]["tmp_name"], $dst . $newfilename);
+$cer8= $newfilename;
 
-if(file_exists($_FILES['cer9']['name']) || is_uploaded_file($_FILES['cer9']['name'])) {
-    $temp = explode(".", $_FILES["cer9"]["name"]);
-    $newfilename = $commRegister . pathinfo($_FILES['cer9']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-    $dst = "./uploads/";
-    move_uploaded_file($_FILES["cer9"]["tmp_name"], $dst . $newfilename);
-    $cer9 = $newfilename; 
-}
+$temp10 = explode(".", $_FILES["cer59"]["name"]);
+$newfilename = $commRegister . pathinfo($_FILES['cer59']['name'], PATHINFO_FILENAME) . '.' . end($temp10);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["cer59"]["tmp_name"], $dst . $newfilename);
+$cer9= $newfilename;
 
-if(file_exists($_FILES['cer10']['name']) || is_uploaded_file($_FILES['cer10']['name'])) {
-    $temp = explode(".", $_FILES["cer10"]["name"]);
-    $newfilename = $commRegister . pathinfo($_FILES['cer10']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-    $dst = "./uploads/";
-    move_uploaded_file($_FILES["cer10"]["tmp_name"], $dst . $newfilename);
-    $cer10 = $newfilename; 
-}
+$temp11 = explode(".", $_FILES["cer10"]["name"]);
+$newfilename = $commRegister . pathinfo($_FILES['cer10']['name'], PATHINFO_FILENAME) . '.' . end($temp11);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["cer10"]["tmp_name"], $dst . $newfilename);
+$cer10 = $newfilename;
 
-if(file_exists($_FILES['cer11']['name']) || is_uploaded_file($_FILES['cer11']['name'])) {
-    $temp = explode(".", $_FILES["cer11"]["name"]);
-    $newfilename = $commRegister . pathinfo($_FILES['cer11']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-    $dst = "./uploads/";
-    move_uploaded_file($_FILES["cer11"]["tmp_name"], $dst . $newfilename);
-    $cer11 = $newfilename; 
-}
-
-
-
-
+$temp12 = explode(".", $_FILES["cer11"]["name"]);
+$newfilename = $commRegister . pathinfo($_FILES['cer11']['name'], PATHINFO_FILENAME) . '.' . end($temp12);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["cer11"]["tmp_name"], $dst . $newfilename);
+$cer11 = $newfilename;
 
 
      

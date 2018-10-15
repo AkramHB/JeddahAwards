@@ -114,7 +114,7 @@
                     <td>" . $row['initiativeStart'] . "
                     <td>" . $row['initiativeFinish'] . "
                     <td>" . $row['city'] . "
-                    <td>" . $row['initiativeDesk'] . "
+                    <td>" . $row['initiativeDesc'] . "
                     <td>" . $row['initiativeUnique'] . "
                     <td>" . $row['initiativeSponsor']. "";
                     if($row['ack'] != ''){

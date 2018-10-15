@@ -62,149 +62,129 @@ if (!empty($_POST["id"])) {
             $cer8 = "";
             $cer9 = "";
 
-            if(file_exists($_FILES['ack']['name']) || is_uploaded_file($_FILES['ack']['name'])) {
-                $temp = explode(".", $_FILES["ack"]["name"]);
-                $newfilename = $idnum . pathinfo($_FILES['ack']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-                $dst = "./uploads/";
-                move_uploaded_file($_FILES["ack"]["tmp_name"], $dst . $newfilename);
-                $ack = $newfilename; 
-            }
+            $temp = explode(".", $_FILES["ack"]["name"]);
+$newfilename = $idnum . pathinfo($_FILES['ack']['name'], PATHINFO_FILENAME) . '.' . end($temp);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["ack"]["tmp_name"], $dst . $newfilename);
+$ack = $newfilename;
 
-            if(file_exists($_FILES['cer']['name']) || is_uploaded_file($_FILES['cer']['name'])) {
-                $temp = explode(".", $_FILES["cer"]["name"]);
-                $newfilename = $idnum . pathinfo($_FILES['cer']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-                $dst = "./uploads/";
-                move_uploaded_file($_FILES["cer"]["tmp_name"], $dst . $newfilename);
-                $cer = $newfilename; 
-            }
+$temp2 = explode(".", $_FILES["cer"]["name"]);
+$newfilename = $idnum . pathinfo($_FILES['cer']['name'], PATHINFO_FILENAME) . '.' . end($temp2);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["cer"]["tmp_name"], $dst . $newfilename);
+$cer = $newfilename;
 
-            if(file_exists($_FILES['cer2']['name']) || is_uploaded_file($_FILES['cer2']['name'])) {
-                $temp = explode(".", $_FILES["cer2"]["name"]);
-                $newfilename = $idnum . pathinfo($_FILES['cer2']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-                $dst = "./uploads/";
-                move_uploaded_file($_FILES["cer2"]["tmp_name"], $dst . $newfilename);
-                $cer2 = $newfilename; 
-            }
+$temp3 = explode(".", $_FILES["cer2"]["name"]);
+$newfilename = $idnum . pathinfo($_FILES['cer2']['name'], PATHINFO_FILENAME) . '.' . end($temp3);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["cer2"]["tmp_name"], $dst . $newfilename);
+$cer2 = $newfilename;
 
-            if(file_exists($_FILES['cer3']['name']) || is_uploaded_file($_FILES['cer3']['name'])) {
-                $temp = explode(".", $_FILES["cer3"]["name"]);
-                $newfilename = $idnum . pathinfo($_FILES['cer3']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-                $dst = "./uploads/";
-                move_uploaded_file($_FILES["cer3"]["tmp_name"], $dst . $newfilename);
-                $cer3 = $newfilename; 
-            }
+$temp4 = explode(".", $_FILES["cer3"]["name"]);
+$newfilename = $idnum . pathinfo($_FILES['cer3']['name'], PATHINFO_FILENAME) . '.' . end($temp4);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["cer3"]["tmp_name"], $dst . $newfilename);
+$cer3 = $newfilename;
 
-            if(file_exists($_FILES['cer4']['name']) || is_uploaded_file($_FILES['cer4']['name'])) {
-                $temp = explode(".", $_FILES["cer4"]["name"]);
-                $newfilename = $idnum . pathinfo($_FILES['cer4']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-                $dst = "./uploads/";
-                move_uploaded_file($_FILES["cer4"]["tmp_name"], $dst . $newfilename);
-                $cer4 = $newfilename; 
-            }
+$temp5 = explode(".", $_FILES["cer4"]["name"]);
+$newfilename = $idnum . pathinfo($_FILES['cer4']['name'], PATHINFO_FILENAME) . '.' . end($temp5);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["cer4"]["tmp_name"], $dst . $newfilename);
+$cer4 = $newfilename;
 
-            if(file_exists($_FILES['cer5']['name']) || is_uploaded_file($_FILES['cer5']['name'])) {
-                $temp = explode(".", $_FILES["cer5"]["name"]);
-                $newfilename = $idnum . pathinfo($_FILES['cer5']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-                $dst = "./uploads/";
-                move_uploaded_file($_FILES["cer5"]["tmp_name"], $dst . $newfilename);
-                $cer5 = $newfilename; 
-            }
+$temp6 = explode(".", $_FILES["cer5"]["name"]);
+$newfilename = $idnum . pathinfo($_FILES['cer5']['name'], PATHINFO_FILENAME) . '.' . end($temp6);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["cer5"]["tmp_name"], $dst . $newfilename);
+$cer5 = $newfilename;
 
-            if(file_exists($_FILES['cer6']['name']) || is_uploaded_file($_FILES['cer6']['name'])) {
-                $temp = explode(".", $_FILES["cer6"]["name"]);
-                $newfilename = $idnum . pathinfo($_FILES['cer6']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-                $dst = "./uploads/";
-                move_uploaded_file($_FILES["cer6"]["tmp_name"], $dst . $newfilename);
-                $cer6 = $newfilename; 
-            }
+$temp7 = explode(".", $_FILES["cer6"]["name"]);
+$newfilename = $idnum . pathinfo($_FILES['cer6']['name'], PATHINFO_FILENAME) . '.' . end($temp7);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["cer6"]["tmp_name"], $dst . $newfilename);
+$cer6 = $newfilename;
 
-            if(file_exists($_FILES['cer7']['name']) || is_uploaded_file($_FILES['cer7']['name'])) {
-                $temp = explode(".", $_FILES["cer7"]["name"]);
-                $newfilename = $idnum . pathinfo($_FILES['cer7']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-                $dst = "./uploads/";
-                move_uploaded_file($_FILES["cer7"]["tmp_name"], $dst . $newfilename);
-                $cer7 = $newfilename; 
-            }
+$temp8 = explode(".", $_FILES["cer7"]["name"]);
+$newfilename = $idnum . pathinfo($_FILES['cer7']['name'], PATHINFO_FILENAME) . '.' . end($temp8);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["cer7"]["tmp_name"], $dst . $newfilename);
+$cer7 = $newfilename;
 
-            if(file_exists($_FILES['cer8']['name']) || is_uploaded_file($_FILES['cer8']['name'])) {
-                $temp = explode(".", $_FILES["cer8"]["name"]);
-                $newfilename = $idnum . pathinfo($_FILES['cer8']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-                $dst = "./uploads/";
-                move_uploaded_file($_FILES["cer8"]["tmp_name"], $dst . $newfilename);
-                $cer8 = $newfilename; 
-            }
+$temp9 = explode(".", $_FILES["cer8"]["name"]);
+$newfilename = $idnum . pathinfo($_FILES['cer8']['name'], PATHINFO_FILENAME) . '.' . end($temp9);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["cer8"]["tmp_name"], $dst . $newfilename);
+$cer8 = $newfilename;
 
-            if(file_exists($_FILES['cer9']['name']) || is_uploaded_file($_FILES['cer9']['name'])) {
-                $temp = explode(".", $_FILES["cer9"]["name"]);
-                $newfilename = $idnum . pathinfo($_FILES['cer9']['name'], PATHINFO_FILENAME) . '.' . end($temp);
-                $dst = "./uploads/";
-                move_uploaded_file($_FILES["cer9"]["tmp_name"], $dst . $newfilename);
-                $cer9 = $newfilename; 
-            }
+$temp10 = explode(".", $_FILES["cer9"]["name"]);
+$newfilename = $idnum . pathinfo($_FILES['cer9']['name'], PATHINFO_FILENAME) . '.' . end($temp10);
+$dst = "./uploads/";
+move_uploaded_file($_FILES["cer9"]["tmp_name"], $dst . $newfilename);
+$cer9 = $newfilename;
 
-            if($ack != ''){
+            if($ack != $idnum  . "."){
                 $sql = "UPDATE individuals
                 SET ack = '$ack'
                 WHERE id = '$id';";
                 $result = $link->query($sql);
             }
 
-            if($cer != ''){
+            if($cer != $idnum . "."){
                 $sql = "UPDATE individuals
                 SET cer = '$cer'
                 WHERE id = '$id';";
                 $result = $link->query($sql);
             }
 
-            if($cer2 != ''){
+            if($cer2 != $idnum . "."){
                 $sql = "UPDATE individuals
                 SET cer2 = '$cer2'
                 WHERE id = '$id';";
                 $result = $link->query($sql);
             }
 
-            if($cer3 != ''){
+            if($cer3 != $idnum . "."){
                 $sql = "UPDATE individuals
                 SET cer3 = '$cer3'
                 WHERE id = '$id';";
                 $result = $link->query($sql);
             }
 
-            if($cer4 != ''){
+            if($cer4 != $idnum . "."){
                 $sql = "UPDATE individuals
                 SET cer4 = '$cer4'
                 WHERE id = '$id';";
                 $result = $link->query($sql);
             }
-            if($cer5 != ''){
+            if($cer5 != $idnum . "."){
                 $sql = "UPDATE individuals
                 SET cer5 = '$cer5'
                 WHERE id = '$id';";
                 $result = $link->query($sql);
             }
 
-            if($cer6 != ''){
+            if($cer6 != $idnum . "."){
                 $sql = "UPDATE individuals
                 SET cer6 = '$cer6'
                 WHERE id = '$id';";
                 $result = $link->query($sql);
             }
 
-            if($cer7 != ''){
+            if($cer7 != $idnum . "."){
                 $sql = "UPDATE individuals
                 SET cer7 = '$cer7'
                 WHERE id = '$id';";
                 $result = $link->query($sql);
             }
 
-            if($cer8 != ''){
+            if($cer8 != $idnum . "."){
                 $sql = "UPDATE individuals
                 SET cer8 = '$cer8'
                 WHERE id = '$id';";
                 $result = $link->query($sql);
             }
 
-            if($cer9 != ''){
+            if($cer9 != $idnum . "."){
                 $sql = "UPDATE individuals
                 SET cer9 = '$cer9'
                 WHERE id = '$id';";
