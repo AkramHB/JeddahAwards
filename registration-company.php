@@ -246,6 +246,7 @@ if(mysqli_query($link, $sql)){
 
 
 
+
     $from = "info@jeddahawards.org";
     // Always set content-type when sending HTML email
     $headers = 'MIME-Version: 1.0' . "\r\n";
