@@ -257,9 +257,9 @@ $sql = "INSERT INTO organizations (username, password, orgName, orgField, establ
 if(mysqli_query($link, $sql)){
     
     $to = $email;
-    $subject = 'شكرًا لتسجيلكم في برنامج جدة للابداع';
+    $subject = 'جائزة جدة للإبداع لعام 1440هـ';
     $text = '' .  $orgName . "<br>";
-    $text .= 'لقد تم ترشيحكم في جائزة جدة للابداع لعام ١٤٤٠ ' . "<br>";
+    $text .= 'لقد تم تسجيل مبادرتكم بنجاح في جائزة جدة للابداع لعام ١٤٤٠ ' . "<br>";
     $text .= 'بيانات ترشيحكم كالآتي: ' . "<br>";
     $text .= 'اسم المترشح: ' .  $orgName . "<br>";
     $text .= 'رقم الهوية: ' .  $commRegister . "<br>";
@@ -268,7 +268,9 @@ if(mysqli_query($link, $sql)){
     $text .= 'http://jeddahawards.org/login.php' . "<br><br>";
     $text .= 'بيانات الدخول ' . "<br>";
     $text .= 'اسم المستخدم: ' .  $username . "<br>";
-    $text .= 'كلمة السر: ' .  $password . "<br>";
+    $text .= 'كلمة السر: ' .  $password . "<br><br>";
+    $text .= 'جائزة جدة للإبداع تتمنى لكم التوفيق ..' . "<br><br>";
+
 
 
 
